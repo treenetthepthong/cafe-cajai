@@ -1,0 +1,83 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-container {
+    font-family: Arial, sans-serif;
+    background-color: #FFE2D891;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 50px;
+}
+
+.header h1 {
+    font-size: 3em;
+    color: #3d3b45;
+}
+
+.header h2 {
+    font-size: 1.5em;
+    color: #f55f5f;
+}
+
+/* Introduction Section */
+.intro {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #3d3b45;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.footer .contact-info, .footer .order-info, .footer .contact, .footer .social {
+    width: 20%;
+}
+
+.footer h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.footer .social p {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.footer .social p:hover {
+    color: #f55f5f;
+    cursor: pointer;
+}
