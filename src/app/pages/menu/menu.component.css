@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ทำให้ body เต็มความสูงของหน้าจอ */
+    padding: 0;
+    margin: 0;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์สำหรับหน้าจอใหญ่ */
+    gap: 15px;
+    width: 100%;
+    height: 91vh; /* ทำให้ความสูงเต็มหน้าจอ */
+    max-width: 100%;
+    grid-auto-rows: 1fr; /* ให้แต่ละแถวมีความสูงเท่ากัน */
+    padding: 15px;
+}
+
+.menu-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column; /* ทำให้รูปและข้อความในแต่ละเมนูอยู่ในลำดับที่ถูกต้อง */
+}
+
+.menu-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้รูปไม่เสียสัดส่วน */
+    display: block;
+}
+
+.menu-item h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+    background-color: rgba(243, 226, 199, 0.95);
+    color: #5d4037;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* --- ขยาย Best Seller ใหญ่ขึ้น --- */
+.large {
+    grid-column: span 2; /* ขยาย 2 คอลัมน์ */
+    grid-row: span 2;    /* ขยาย 2 แถว */
+}
+
+/* --- ปรับให้เหมาะกับหน้าจอขนาดเล็กกว่า 768px (Tablet) --- */
+@media (max-width: 768px) {
+    .menu-container {
+        grid-template-columns: 1fr 1fr; /* 2 คอลัมน์สำหรับแท็บเล็ต */
+    }
+
+    .large {
+        grid-column: span 2; /* ขยาย Best Seller เต็มความกว้าง */
+        grid-row: span 1;    /* กลับเป็น 1 แถว */
+    }
+}
+
+/* --- ปรับให้เหมาะกับมือถือขนาดเล็กกว่า 480px --- */
+@media (max-width: 480px) {
+    .menu-container {
+        grid-template-columns: 1fr; /* 1 คอลัมน์สำหรับมือถือ */
+    }
+
+    .large {
+        grid-column: span 1; /* ลดขนาด Best Seller ให้กลับมาเป็น 1 คอลัมน์ */
+        grid-row: span 1;
+    }
+}
