@@ -9,6 +9,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BestSellerComponent } from './pages/best-seller/best-seller.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { BestSellerComponent } from './pages/best-seller/best-seller.component';
     HomeComponent,
     MenuComponent,
     AboutComponent,
-    BestSellerComponent
+    BestSellerComponent,
+
   ],
   imports: [
     BrowserModule,
