@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+
+header .logo h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    list-style-type: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header .search-cart {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+header .search-cart input {
+    padding: 5px;
+    font-size: 1em;
+}
+
+section.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px;
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;  /* เพื่อให้เราสามารถวางข้อความภายนอก */
+    overflow: visible;  /* เพื่อให้ข้อความไม่ถูกตัดออก */
+}
+
+.menu-item img {
+    max-width: 100%;
+}
+
+.menu-item .item-info {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.menu-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    font-size: 1em;
+    color: #f55f5f;
+}
