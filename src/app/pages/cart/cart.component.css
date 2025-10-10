@@ -1,0 +1,186 @@
+/* ปรับให้ offcanvas body มีระยะห่างและสีพื้นหลังที่สะอาดตา */
+.offcanvas-body {
+  padding: 20px;
+  background-color: #fff;
+  border-top: none;  /* ลบเส้นบน */
+}
+
+.list-group {
+  border-top: none;  /* ลบเส้นบนของ list group */
+}
+
+.list-group-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px 0;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #fff;
+  border-top: none;  /* ลบเส้นบน */
+}
+
+/* ลบเส้นด้านบนของรายการแรก */
+.list-group-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.item-details .item-name {
+  font-size: 0.95rem;
+  color: #000;
+  font-weight: 400;
+}
+
+.item-price {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  align-self: flex-start;
+}
+
+.quantity-control .btn {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.quantity-control .btn:hover {
+  background-color: #f5f5f5;
+}
+
+.quantity-input {
+  width: 30px;
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.offcanvas-footer {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  border-top: none;  /* ลบเส้นบน */
+}
+
+.offcanvas-footer .btn {
+  flex: 1;
+  font-size: 0.9rem;
+  padding: 12px;
+  border-radius: 25px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-secondary {
+  background-color: #d3d3d3;
+  color: #666;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #d3d3d3;
+  color: #666;
+  border: none;
+}
+
+/* ปรับ header ของ offcanvas - ลบเส้นทั้งหมด */
+.offcanvas-header {
+  padding: 15px 20px;
+  border-bottom: none;
+  border-top: none;
+}
+
+.offcanvas-title {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.btn-close {
+  font-size: 0.8rem;
+}
+
+/* ส่วน Total */
+.d-flex.justify-content-between {
+  font-size: 1rem;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: none;  /* ลบเส้นบน */
+}
+
+.d-flex.justify-content-between span {
+  font-weight: 400;
+}
+
+/* Success Modal Styles */
+.modal-content {
+  border-radius: 15px;
+}
+
+.success-checkmark svg {
+  animation: scaleIn 0.3s ease-in-out;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-success-custom {
+  background-color: #A8D5A8;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 50px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success-custom:hover {
+  background-color: #90c090;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}

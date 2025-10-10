@@ -10,6 +10,7 @@ import { CroffleComponent } from './pages/croffle/croffle.component';
 import { DrinksComponent } from './pages/drinks/drinks.component';
 import { BrownieComponent } from './pages/brownie/brownie.component';
 import { CakeComponent } from './pages/cake/cake.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'drinks', component: DrinksComponent},
   { path: 'cake', component: CakeComponent},
   { path: 'brownie', component: BrownieComponent},
+  { path: 'cart', component: CartComponent},
 ];
 
 @NgModule({
