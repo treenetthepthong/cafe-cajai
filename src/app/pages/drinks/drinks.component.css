@@ -76,3 +76,6 @@ section.menu {
     font-size: 1em;
     color: #f55f5f;
 }
+.menu-item:hover {
+  transform: scale(1.05); /* ขยายเล็กน้อยเมื่อ hover */
+}

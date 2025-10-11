@@ -3,6 +3,8 @@ import { ProductService } from '../../service/product.service';
 import { CategoryService } from '../../service/category.service';
 import { Product } from '../../models/product.model';
 import { Category } from '../../models/category.model';
+import { CartService } from '../../service/cart.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -14,10 +16,11 @@ import { Category } from '../../models/category.model';
 export class DrinksComponent implements OnInit {
   products: Product[] = [];
   categories: Category[] = [];
-constructor(private productService: ProductService, private categoryService: CategoryService) { }
+
+constructor(private productService: ProductService, private categoryService: CategoryService,private cartService: CartService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    // ดึงข้อมูลหมวดหมู่ทั้งหมด
+  
     this.categoryService.getCategories().subscribe(data => {
       this.categories = data;
     });
@@ -34,4 +37,9 @@ constructor(private productService: ProductService, private categoryService: Cat
     const category = this.categories.find(c => c.category_code === categoryCode);
     return category ? category.category_name : 'Unknown';
   }
+
+  addToCart(product: any) {
+    this.cartService.addToCart({ ...product, quantity: 1 });
+  }
+  
 }

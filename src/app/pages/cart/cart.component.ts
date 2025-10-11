@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../service/cart.service';
+import { Subscription } from 'rxjs';
 
 declare var bootstrap: any; // สำหรับใช้ Bootstrap JavaScript
 
@@ -9,13 +11,21 @@ declare var bootstrap: any; // สำหรับใช้ Bootstrap JavaScript
   styleUrl: './cart.component.css'
 })
 export class CartComponent implements OnInit {
-  cartItems = [
-    { name: 'Pistachio Croissant', price: 150, quantity: 1 },
-    { name: 'Cake', price: 200, quantity: 1 }
-  ];
+  cartItems: any[] = [];
+  private cartSubscription: Subscription = Subscription.EMPTY;
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    // สามารถเพิ่มโค้ดเริ่มต้นตรงนี้ได้ถ้าต้องการ
+      this.cartSubscription = this.cartService.currentCartItems.subscribe(items => {
+      this.cartItems = items;
+    });
+  }
+
+  ngOnDestroy(): void {
+    // เมื่อ component ถูกทำลายให้ unsubscribe
+    if (this.cartSubscription) {
+      this.cartSubscription.unsubscribe();
+    }
   }
 
   get totalPrice() {
@@ -30,6 +40,7 @@ export class CartComponent implements OnInit {
       if (offcanvas) {
         offcanvas.hide();
       }
+      this.cartService.clearCart();
     }
 
     // แสดง success modal หลังจาก offcanvas ปิดแล้ว (รอ 300ms)

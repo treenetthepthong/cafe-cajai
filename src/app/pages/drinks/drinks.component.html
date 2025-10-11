@@ -1,13 +1,13 @@
 <!-- src/app/pages/drinks/drinks.component.html -->
 <section class="menu">
   <div *ngFor="let product of products" class="menu-item">
-    <!-- แสดงภาพสินค้า -->
+    <div (click)="addToCart(product)">
     <img *ngIf="product.image_url" [src]="product.image_url" alt="{{ product.name }}" />
-    
-    <!-- ข้อมูลสินค้า -->
     <div class="item-info">
-      <h3>{{ product.name }}</h3>  <!-- ชื่อสินค้า -->
-      <p>1/THB {{ product.price }}</p>      <!-- ราคา -->
+      <h3>{{ product.name }}</h3>  
+      <p>1/THB {{ product.price }}</p>      
+      
     </div>
+  </div>
   </div>
 </section>
