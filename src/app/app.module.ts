@@ -12,6 +12,7 @@ import { CroissantComponent } from './pages/croissant/croissant.component';
 import { CroffleComponent } from './pages/croffle/croffle.component';
 import { DrinksComponent } from './pages/drinks/drinks.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CartComponent } from './pages/cart/cart.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(withEventReplay())

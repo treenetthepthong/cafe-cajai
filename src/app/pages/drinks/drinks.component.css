@@ -55,6 +55,7 @@ section.menu {
     text-align: center;
     position: relative;  /* เพื่อให้เราสามารถวางข้อความภายนอก */
     overflow: visible;  /* เพื่อให้ข้อความไม่ถูกตัดออก */
+    
 }
 
 .menu-item img {

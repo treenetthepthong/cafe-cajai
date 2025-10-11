@@ -1,44 +1,13 @@
+<!-- src/app/pages/drinks/drinks.component.html -->
 <section class="menu">
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624615330742382/image.png?ex=68dd59eb&is=68dc086b&hm=e581db9028b1e832f8363b73bc45c43f96bbc86bbe445a1b107216ef616be743&" alt="Chocolate Frappe">
-            <div class="item-info">
-                <h3>Chocolate Frappe</h3>
-                <p>1/THB 135</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624617054474421/image.png?ex=68dd59eb&is=68dc086b&hm=70025f03e729fb4a4179b4c04545ef1c6ca1d61ae15eaa13c4034b982c53592f&" alt="Matcha Latte">
-            <div class="item-info">
-                <h3>Matcha Latte</h3>
-                <p>1/THB 160</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624617926885457/image.png?ex=68dd59ec&is=68dc086c&hm=81570e6c636dc9a473bb90331cb2593c838a17ceaea53429ee8cf6e7e9d56c6a&" alt="Iced Americano">
-            <div class="item-info">
-                <h3>Iced Americano</h3>
-                <p>1/THB 100</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624618455240795/image.png?ex=68dd59ec&is=68dc086c&hm=274cb78ab459097c439c9c046ce76e5bb7bff5fb5637db7648b5c75ab34d2d1c&" alt="Yuzu Sparkling">
-            <div class="item-info">
-                <h3>Yuzu Sparkling</h3>
-                <p>1/THB 110</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624618971136201/image.png?ex=68dd59ec&is=68dc086c&hm=3d66784e90e344bd059cc959325e91d2b82f3ce95a80603285334f31ee6de1d1&" alt="Strawberry Frappe">
-            <div class="item-info">
-                <h3>Strawberry Frappe</h3>
-                <p>1/THB 125</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624619675914352/image.png?ex=68dd59ec&is=68dc086c&hm=0f774adb648de5f9c9265f0c5db1bfe4c50ff8476018ed4d67d475af614f3a18&" alt="My Rose">
-            <div class="item-info">
-                <h3>My Rose</h3>
-                <p>1/THB 95</p>
-            </div>
-        </div>
-    </section>
+  <div *ngFor="let product of products" class="menu-item">
+    <!-- แสดงภาพสินค้า -->
+    <img *ngIf="product.image_url" [src]="product.image_url" alt="{{ product.name }}" />
+    
+    <!-- ข้อมูลสินค้า -->
+    <div class="item-info">
+      <h3>{{ product.name }}</h3>  <!-- ชื่อสินค้า -->
+      <p>1/THB {{ product.price }}</p>      <!-- ราคา -->
+    </div>
+  </div>
+</section>
