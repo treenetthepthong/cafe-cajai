@@ -1,44 +1,12 @@
 <section class="menu">
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624841097285743/image.png?ex=68dd5a21&is=68dc08a1&hm=a9c77456dc6e9f14c5d3f419ca187c4af0c6263b0da7ac641ff3e58b8dffc9c0&" alt="Brownie Almond">
-            <div class="item-info">
-                <h3>Brownie Almond</h3>
-                <p>1/THB 85</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624841785282722/image.png?ex=68dd5a21&is=68dc08a1&hm=5031b6e43d5d0caf3ffe3f901355d7203366da4177a63bff03d3d09e77d28618&" alt="Brownie Biscoff">
-            <div class="item-info">
-                <h3>Brownie Biscoff</h3>
-                <p>1/THB 95</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624842519154788/image.png?ex=68dd5a21&is=68dc08a1&hm=f4bc3939921dadf40366646df6724e27a574b787815b59b60d560249fdbdb373&" alt="Brownie Choc Drop">
-            <div class="item-info">
-                <h3>Brownie Choc Drop</h3>
-                <p>1/THB 135</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624842968072293/image.png?ex=68dd5a21&is=68dc08a1&hm=7da312a83a444a7860002567ebbb75f5fc48a2f321184f5323303a37baa921f2&" alt="Brownie White Choc">
-            <div class="item-info">
-                <h3>Brownie White Choc</h3>
-                <p>1/THB 110</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624843479646298/image.png?ex=68dd5a21&is=68dc08a1&hm=f7b1645c01814c42a0d0d763e35f99e8b9dba40066da8794d93dfaa69c24e482&" alt="Brownie Matcha">
-            <div class="item-info">
-                <h3>Brownie Matcha</h3>
-                <p>1/THB 120</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422624844024909846/image.png?ex=68dd5a21&is=68dc08a1&hm=255b283bf7335a8e11d69b5a48e5c9683de97dbc88ea0d188009bdc9da056607&" alt="Brownie Macadamia">
-            <div class="item-info">
-                <h3>Brownie Macadamia</h3>
-                <p>1/THB 140</p>
-            </div>
-        </div>
-    </section>
+  <div *ngFor="let product of products" class="menu-item">
+    <div (click)="addToCart(product)">
+    <img *ngIf="product.image_url" [src]="product.image_url" alt="{{ product.name }}" />
+    <div class="item-info">
+      <h3>{{ product.name }}</h3>  
+      <p>1/THB {{ product.price }}</p>      
+      
+    </div>
+  </div>
+  </div>
+</section>

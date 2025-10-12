@@ -13,6 +13,9 @@ import { CroffleComponent } from './pages/croffle/croffle.component';
 import { DrinksComponent } from './pages/drinks/drinks.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrownieComponent } from './pages/brownie/brownie.component';
+import { CakeComponent } from './pages/cake/cake.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -27,11 +30,14 @@ import { HttpClientModule } from '@angular/common/http';
     CroffleComponent,
     DrinksComponent,
     CartComponent,
+    BrownieComponent,
+    CakeComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule,
     HttpClientModule
   ],

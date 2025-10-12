@@ -33,10 +33,10 @@ constructor(private productService: ProductService, private categoryService: Cat
   }
 
   // ฟังก์ชันในการหาชื่อหมวดหมู่จาก category_code
-  getCategoryName(categoryCode: string): string {
-    const category = this.categories.find(c => c.category_code === categoryCode);
-    return category ? category.category_name : 'Unknown';
-  }
+  // getCategoryName(categoryCode: string): string {
+  //   const category = this.categories.find(c => c.category_code === categoryCode);
+  //   return category ? category.category_name : 'Unknown';
+  // }
 
   addToCart(product: any) {
     this.cartService.addToCart({ ...product, quantity: 1 });

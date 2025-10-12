@@ -1,44 +1,13 @@
+<!-- src/app/pages/drinks/drinks.component.html -->
 <section class="menu">
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422625024296353863/image.png?ex=68dd5a4c&is=68dc08cc&hm=cd685daa385046adf2b91bc250c6f7626f1009b4def9c28e1eaeda197a7db86b&" alt="Blueberry Cheese Pie">
-            <div class="item-info">
-                <h3>Blueberry Cheese Pie</h3>
-                <p>1/THB 120</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422625024627576921/image.png?ex=68dd5a4c&is=68dc08cc&hm=bcd0dc0ce6e363aa539233db69764871780e3b9efa253ba9c3cfa614c5cbffd7&" alt="Burnt Cheese Cake">
-            <div class="item-info">
-                <h3>Burnt Cheese Cake</h3>
-                <p>1/THB 150</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422625025013317632/image.png?ex=68dd5a4d&is=68dc08cd&hm=34e37ff907deff836cd1eea60cd510dab4119f96dcefde6125b15f7704d2e38f&" alt="Choco Choco Tart">
-            <div class="item-info">
-                <h3>Choco Choco Tart</h3>
-                <p>1/THB 165</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422625025382420570/image.png?ex=68dd5a4d&is=68dc08cd&hm=f5012427e057b08df0c1f4af5d8d89e853bdaa2ab333decb0ef437d18a99942c&" alt="Mixed Nut Caramel">
-            <div class="item-info">
-                <h3>Mixed Nut Caramel</h3>
-                <p>1/THB 160</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422625025697124443/image.png?ex=68dd5a4d&is=68dc08cd&hm=abcf5607784c617f51dcae108e53d972b224cca69b7bfe92860e5794fb201786&" alt="Yuzu Meringue Tart">
-            <div class="item-info">
-                <h3>Yuzu Meringue Tart</h3>
-                <p>1/THB 85</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422625026015756486/image.png?ex=68dd5a4d&is=68dc08cd&hm=da6fcba78b89e0f912858842fe2452beea3842f3928065dcba85de2e7dd83b9f&" alt="Fruit Cake">
-            <div class="item-info">
-                <h3>Fruit Cake</h3>
-                <p>1/THB 290</p>
-            </div>
-        </div>
-    </section>
+  <div *ngFor="let product of products" class="menu-item">
+    <div (click)="addToCart(product)">
+    <img *ngIf="product.image_url" [src]="product.image_url" alt="{{ product.name }}" />
+    <div class="item-info">
+      <h3>{{ product.name }}</h3>  
+      <p>1/THB {{ product.price }}</p>      
+      
+    </div>
+  </div>
+  </div>
+</section>

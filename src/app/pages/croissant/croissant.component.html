@@ -1,45 +1,12 @@
 <section class="menu">
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422601731602251957/image.png?ex=68dd449b&is=68dbf31b&hm=e954f201cfa0520379b6e903c87041168003ff65f5e41b90e9d7df5b566636f3&" alt="Croissant Plain">
-            <div class="item-info">
-                <h3>Croissant Plain</h3>
-                <p>1/THB 89</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422601732227076179/image.png?ex=68dd449b&is=68dbf31b&hm=ac779a986568aa77800b566308c3ae31985ca53e69f6bc1ab77a4c7c83a19715&" alt="Croissant Ham Cheese">
-            <div class="item-info">
-                <h3>Croissant Ham Cheese</h3>
-                <p>1/THB 110</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422601732642443526/image.png?ex=68dd449b&is=68dbf31b&hm=6ce85a7b79ce07c3067f57dedbf9e21625af1cdb6a6862ec2724fc8e988c19fe&" alt="Croissant Chocolate">
-            <div class="item-info">
-                <h3>Croissant Chocolate</h3>
-                <p>1/THB 125</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422601733070389258/image.png?ex=68dd449b&is=68dbf31b&hm=800dcf440d22a3c6d49376c6d58249d0b796f2764bc607c52f4ba72cdbdb3484&" alt="Croissant Almond">
-            <div class="item-info">
-                <h3>Croissant Almond</h3>
-                <p>1/THB 135</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://media.discordapp.net/attachments/1214599088448995330/1422300210167681186/image.png?ex=68dc2bcb&is=68dada4b&hm=fc27e6cb50e8184643cad5bbff7ecc17df2809138475d464b5a37d1c14e62b7a&=&format=webp&quality=lossless" alt="Croissant Matcha">
-            <div class="item-info">
-                <h3>Croissant Matcha</h3>
-                <p>1/THB 165</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="https://cdn.discordapp.com/attachments/1214599088448995330/1422601734181621874/image.png?ex=68dd449c&is=68dbf31c&hm=960af0d2ceb6f8ae4993c20e7f15179220963f89a3297f2a6bb161d0eb6bf08e&" alt="Croissant Pistachio">
-            <div class="item-info">
-                <h3>Croissant Pistachio</h3>
-                <p>1/THB 180</p>
-            </div>
-        </div>
-    </section>
-
+  <div *ngFor="let product of products" class="menu-item">
+    <div (click)="addToCart(product)">
+    <img *ngIf="product.image_url" [src]="product.image_url" alt="{{ product.name }}" />
+    <div class="item-info">
+      <h3>{{ product.name }}</h3>  
+      <p>1/THB {{ product.price }}</p>      
+      
+    </div>
+  </div>
+  </div>
+</section>
