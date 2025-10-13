@@ -6,6 +6,7 @@ import { Category } from '../../models/category.model';
 import { CartService } from '../../service/cart.service';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-brownie',
   standalone: false,
