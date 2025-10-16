@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrownieComponent } from './pages/brownie/brownie.component';
 import { CakeComponent } from './pages/cake/cake.component';
 import { CommonModule } from '@angular/common';
+import { SearchComponent } from './pages/search/search.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { CommonModule } from '@angular/common';
     DrinksComponent,
     CartComponent,
     BrownieComponent,
-    CakeComponent
+    CakeComponent,
+    SearchComponent
 
   ],
   imports: [

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,17 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
  private cartItems = new BehaviorSubject<any[]>([]);  // เก็บสินค้าในตะกร้า
   currentCartItems = this.cartItems.asObservable();  // ให้สามารถ subscribe เพื่อดูข้อมูลสินค้าในตะกร้า
-
+  private cartVisible = new Subject<boolean>();
+    cartVisible$ = this.cartVisible.asObservable(); // Observable สำหรับการติดตามสถานะการเปิด/ปิดตะกร้า
+  
+    // ฟังก์ชันสำหรับเปิด/ปิดตะกร้า
+    toggleCart() {
+      this.cartVisible.next(true);  // เปลี่ยนสถานะเป็นเปิดตะกร้า
+    }
+  
+    closeCart() {
+      this.cartVisible.next(false); // เปลี่ยนสถานะเป็นปิดตะกร้า
+    }
   // ฟังก์ชันเพิ่มสินค้าลงในตะกร้า
   addToCart(item: any) {
     const currentItems = this.cartItems.value;

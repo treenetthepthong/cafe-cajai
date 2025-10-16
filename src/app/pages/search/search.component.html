@@ -1,0 +1,28 @@
+<div class="search-container">
+  <input type="text" [(ngModel)]="query" class="search-input" placeholder=" " />
+  <button (click)="search()" class="search-btn">Search</button>
+  <!-- ปุ่มสำหรับลบคำค้นหา -->
+  <button *ngIf="query" (click)="clearSearch()" class="clear-btn-x"></button>
+</div>
+
+<div *ngIf="query === ''">
+  <p>Please enter a search term.</p>
+</div>
+
+<!-- ข้อความเมื่อไม่พบผลลัพธ์จากคำค้นหา -->
+<div *ngIf="products.length === 0 && query">
+  <p>Not found.</p>
+</div>
+
+<section class="menu">
+  <div *ngFor="let product of products" class="menu-item">
+    <div (click)="addToCart(product)">
+      <img *ngIf="product.image_url" [src]="product.image_url" alt="{{ product.name }}" />
+      <div class="item-info">
+        <h3>{{ product.name }}</h3>
+        <p>1/THB {{ product.price }}</p>
+
+      </div>
+    </div>
+  </div>
+</section>
