@@ -5,7 +5,8 @@
   </div>
   <div class="offcanvas-body">
     <ul class="list-group">
-      <li *ngFor="let item of cartItems" class="list-group-item d-flex justify-content-between align-items-center">
+      <li *ngFor="let item of cartItems; let i = index"
+        class="list-group-item d-flex justify-content-between align-items-center">
         <div class="item-details">
           <span class="fw-bold">{{ item.name }}</span>
           <span class="item-price">{{ item.price }}</span>
@@ -14,6 +15,9 @@
           <button class="btn btn-sm" (click)="decreaseQuantity(item)">-</button>
           <input type="number" class="form-control quantity-input" [(ngModel)]="item.quantity" min="1" />
           <button class="btn btn-sm" (click)="increaseQuantity(item)">+</button>
+          <button class="btn btn-danger btn-sm ms-2" (click)="removeFromCart(i)">
+            <i class="bi bi-trash2"></i>
+          </button>
         </div>
       </li>
     </ul>
@@ -37,14 +41,15 @@
         <!-- Success Icon -->
         <div class="success-checkmark mb-4">
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40" cy="40" r="38" stroke="#A8D5A8" stroke-width="3" fill="none"/>
-            <path d="M25 40L35 50L55 30" stroke="#A8D5A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="40" cy="40" r="38" stroke="#A8D5A8" stroke-width="3" fill="none" />
+            <path d="M25 40L35 50L55 30" stroke="#A8D5A8" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
           </svg>
         </div>
-        
+
         <!-- Success Text -->
         <h3 class="mb-4" style="font-size: 1.5rem; font-weight: 400; letter-spacing: 1px;">SUCCESS!</h3>
-        
+
         <!-- OK Button -->
         <button type="button" class="btn btn-success-custom" data-bs-dismiss="modal">OKAY</button>
       </div>

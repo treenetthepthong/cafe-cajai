@@ -44,5 +44,11 @@ export class CartService {
     console.log('Order confirmed:', cartData);
     this.clearCart();
   }
+
+  removeFromCart(index: number): void {
+    const currentItems = this.cartItems.getValue();
+    currentItems.splice(index, 1); // ลบรายการจาก array
+    this.cartItems.next(currentItems); // อัปเดตค่าใหม่
+  }
 }
 

@@ -17,7 +17,7 @@ export class CartComponent implements OnInit, OnDestroy {
   // กัน SSR: ใช้ document/window เฉพาะตอนรันบน browser
   private readonly isBrowser = typeof window !== 'undefined';
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.cartSubscription = this.cartService.currentCartItems.subscribe(items => {
@@ -98,6 +98,10 @@ export class CartComponent implements OnInit, OnDestroy {
     if (item.quantity > 1) {
       item.quantity--;
     }
+  }
+
+  removeFromCart(index: number): void {
+    this.cartItems.splice(index, 1);
   }
 
   // ---- helper ----
